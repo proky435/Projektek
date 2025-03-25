@@ -1,0 +1,24 @@
+3. feladat:
+SELECT nev, osztaly
+FROM tanulok INNER JOIN leadasok ON tanulok.tazon=leadasok.tanulo
+WHERE osztaly = "1A"
+4. feladat:
+SELECT idopont, AVG(leadasok.mennyiseg) AS "napi atlag"
+FROM tanulok INNER JOIN leadasok ON tanulok.tazon=leadasok.tanulo
+GROUP BY leadasok.idopont
+5. feladat:
+SELECT osztaly
+FROM tanulok INNER JOIN leadasok ON tanulok.tazon=leadasok.tanulo
+WHERE leadasok.mennyiseg>0 && leadasok.idopont ="2016-10-28"
+GROUP BY osztaly
+6. feladat:
+SELECT osztaly, SUM(leadasok.mennyiseg)/1000 as "mazsa"
+FROM tanulok INNER JOIN leadasok ON tanulok.tazon=leadasok.tanulo
+WHERE leadasok.mennyiseg>0 && leadasok.idopont ="2016-10-28"
+GROUP BY osztaly
+ORDER BY osztaly DESC
+7. feladat:
+SELECT nev, osztaly, SUM(leadasok.mennyiseg) as "osszesen"
+FROM tanulok INNER JOIN leadasok ON tanulok.tazon=leadasok.tanulo
+ORDER BY osztaly DESC
+LIMIT 10

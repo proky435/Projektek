@@ -1,0 +1,28 @@
+#kerdes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+    width: 80%;
+    margin: auto;
+    height: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.valasz{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 40%;
+    background-color: antiquewhite;
+    height: 80px;
+    
+}
+#valaszok{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}

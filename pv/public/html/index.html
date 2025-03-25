@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="..\js\script.js"></script>
+    <title>Tanfolyam</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="../export.html">Tanfolyam Regisztráció</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+        </div>
+      </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-6">
+            <h2>Diákok</h2>
+            <div>
+                <button type="button" class="btn btn-secondary">Hozzáadás</button>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Név</th>
+                        <th>Email</th>
+                        <th>Kor</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-diak">
+                    <tr data-selected="false">
+                        <td>Szabó Anna</td>
+                        <td>anna.szabo@example.com</td>
+                        <td>18</td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td>Nagy Péter</td>
+                        <td>peter.nagy@example.com</td>
+                        <td>20</td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td>Varga Zsuzsa</td>
+                        <td>zsuzsa.varga@example.com</td>
+                        <td>19</td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td>Kovács Béla</td>
+                        <td>bela.kovacs@example.com</td>
+                        <td>22</td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td>Tóth István</td>
+                        <td>istvan.toth@example.com</td>
+                        <td>17</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6">
+            <h2>Tanfolyamok</h2>
+            <div>
+                <button type="button" class="btn btn-secondary">Hozzáadás</button>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Név</th>
+                        <th>Leírás</th>
+                        <th>Oktató</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-tanfolyam">
+                    <tr data-selected="false">
+                        <td>Python programozás</td>
+                        <td>Bevezetés a Python programozási nyelvbe</td>
+                        <td>Nagy László</td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td>Adatbázisok alapjai</td>
+                        <td>SQL lekérdezések és táblák kezelése</td>
+                        <td>Tóth Ildikó</td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td>Webfejlesztés</td>
+                        <td>HTML, CSS és JavaScript alapjai</td>
+                        <td>Szabó András</td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td>Hálózatok és kommunikáció</td>
+                        <td>Számítógépes hálózatok alapjai</td>
+                        <td>Varga Péter</td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td>Algoritmusok és adatstruktúrák</td>
+                        <td>Algoritmikus gondolkodásmód és hatékony adatstruktúrák</td>
+                        <td>Kovács Zsolt</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-6">
+            <h2>Diákok és tanfolyamaik</h2>
+            <div>
+                <button type="button" class="btn btn-secondary">Hozzáadás</button>
+                <button type="button" class="btn btn-secondary">Törlés</button>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Diák neve</th>
+                        <th>Email cím</th>
+                        <th>Tanfolyamok</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-jelentkezes">
+                    <tr data-selected="false">
+                        <td>Szabó Anna</td>
+                        <td>anna.szabo@example.com</td>
+                        <td>Python programozás, Adatbázisok alapjai</td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td>Nagy Péter</td>
+                        <td>peter.nagy@example.com</td>
+                        <td>Webfejlesztés, Hálózatok és kommunikáció</td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td>Varga Zsuzsa</td>
+                        <td>zsuzsa.varga@example.com</td>
+                        <td>Python programozás, Algoritmusok és adatstruktúrák</td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td>Kovács Béla</td>
+                        <td>bela.kovacs@example.com</td>
+                        <td>Adatbázisok alapjai, Webfejlesztés</td>
+                    </tr>
+                    <tr data-selected="false">
+                        <td>Tóth István</td>
+                        <td>istvan.toth@example.com</td>
+                        <td>Hálózatok és kommunikáció, Algoritmusok és adatstruktúrák</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Diák hozzáadása</h2>
+        <form id="diak-hozzaadas">
+            <div class="form-group">
+                <label for="nev">Név:</label>
+                <input type="text" class="form-control" id="nev" name="nev" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="kor">Kor:</label>
+                <input type="number" class="form-control" id="kor" name="kor" required>
+            </div>
+            <button id="diakSubmit" type="button" class="btn btn-primary">Hozzáadás</button>
+        </form>
+    </div>
+    <div class="container">
+        <h2>Tanfolyam hozzáadása</h2>
+        <form id="tanfolyam-hozzaadas">
+            <div class="form-group">
+                <label for="nev">Név:</label>
+                <input type="text" class="form-control" id="nev" name="nev" required>
+            </div>
+            <div class="form-group">
+                <label for="leiras">Leírás:</label>
+                <textarea class="form-control" id="leiras" name="leiras" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="oktato">Oktató:</label>
+                <input type="text" class="form-control" id="oktato" name="oktato" required>
+            </div>
+            <button type="button" class="btn btn-primary" id="tabfolyamSubmit">Hozzáadás</button>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>

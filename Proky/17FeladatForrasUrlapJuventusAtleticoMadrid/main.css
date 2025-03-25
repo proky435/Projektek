@@ -1,0 +1,71 @@
+#container {
+	font-family: sans-serif;
+	width: 700px;
+	margin: 20px 0px 0px 20px;
+	background-color: #dfe3ea;
+	box-shadow: 5px 5px 10px #888888;
+	border-radius: 10px;
+	padding: 20px;
+	font-size: 14px;
+}
+
+img {
+	float: right;
+	width: 300px;
+	border-radius: 10px;
+	margin: 30px 20px 0px 0px;
+}
+
+h1 {
+	text-transform: capitalize;
+	font-size: 28px;
+}
+
+button {
+	width: 100px;
+	height: 30px;
+	font-weight: bold;
+	color: white;
+	font-size: 14px;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+input {
+	padding: 3px;
+	text-align: right;
+}
+
+select {
+	padding: 3px;
+}
+
+
+table {
+	width: 250px;
+}
+
+
+table tr td {
+	padding: 5px;
+	color: #312323;
+}
+
+table tr td:first-child {
+	width: 150px;
+	text-align: left;
+}
+
+.jobbra {
+	text-align: right;
+	font-weight: bold;
+	line-height: 150%;
+}
+
+button#szamol {
+	background-color: green;
+}
+
+button#torol {
+	background-color: darkslategray;
+}

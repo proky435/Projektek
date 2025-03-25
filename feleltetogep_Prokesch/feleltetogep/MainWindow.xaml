@@ -1,0 +1,106 @@
+﻿<Window x:Class="feleltetogep.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:feleltetogep"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Osztályok hozzáadása">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="317*"/>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="40*"/>
+                        <ColumnDefinition Width="404*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="4">
+                        <Label Content="Osztálynév:" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="osztalyokAddInput" Width="120" Margin="10,0,0,0"/>
+                        <Button x:Name="osztAddd" Content="Hozzáad" Margin="10,0,0,0" Click="osztAdd"/>
+                    </StackPanel>
+                    <ListBox x:Name="osztalyokListBox" Grid.Row="1" Margin="10,10,10,10" Grid.ColumnSpan="4"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tanulók hozzáadása">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <ComboBox x:Name="osztalyokComboBox" Width="120" Margin="0,0,10,0"/>
+                        <Label Content="Osztályok" HorizontalAlignment="Left"/>
+                        <Label Content="Tanuló neve" HorizontalAlignment="Left" Margin="30,0,0,0"/>
+                        <TextBox x:Name="tanuloNev" Width="120" Margin="10,0,0,0"/>
+                        <Button x:Name="tadd" Content="Hozzáad" HorizontalAlignment="Left" Margin="10,0,0,0" Click="tanuloAdd"/>
+                    </StackPanel>
+                    <TextBlock x:Name="infoBlock" Grid.Row="1" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Height="308"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Felelés">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <ComboBox x:Name="felelesBox" Width="120" Margin="0,0,10,0"/>
+                        <Button x:Name="sorsolB" Content="Sorsol" Margin="0,0,10,0" Width="87" Click="sorsol"/>
+                        <Label Content="Felelő diák:" HorizontalAlignment="Left" Margin="0,0,0,0"/>
+                        <TextBox x:Name="jelenlegifelelo" Width="120" Margin="10,0,0,0" IsEnabled="False"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="isHereB" Content="Jelen van" Margin="10,0,0,0" Click="isHere"/>
+                            <Button x:Name="isNotHereB" Content="Nincs jelen" Margin="10,0,0,0" Click="isNotHere"/>
+                            <ComboBox x:Name="jegyek" Margin="10,0,10,0" Width="100">
+                                <ComboBoxItem Content="1"/>
+                                <ComboBoxItem Content="2"/>
+                                <ComboBoxItem Content="3"/>
+                                <ComboBoxItem Content="4"/>
+                                <ComboBoxItem Content="5"/>
+                            </ComboBox>
+                            <Button x:Name="ertek" Content="Értékel" Margin="0,0,0,0" Click="ertekel" Width="79"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Osztályzatok">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <ComboBox x:Name="osztalyokComboBox2" Width="120" Margin="0,0,10,0"/>
+                        <Button x:Name="oszElf" Content="Mutasd" Margin="0,0,0,0" Click="osztalyzatMutat"/>
+                    </StackPanel>
+                    <ListBox x:Name="tanulokJegyeListBox" Grid.Row="1" Margin="10"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Felelők törlése">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <ComboBox x:Name="osztalyokComboBox3" Width="120" Margin="0,0,10,0"/>
+                        <Button x:Name="mutat" Content="Mutat" Margin="10,0,0,0" Click="tanulokMutat"/>
+                        <Button x:Name="torol" Content="Töröl" Margin="5,0,0,0" Click="torolFelel"/>
+                        <Button x:Name="torolAll" Content="Összes töröl" Margin="5,0,0,0" Click="torolFelelAll"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+                        <ListBox x:Name="feleltTanulokListBox" Margin="0,0,10,0"/>
+
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

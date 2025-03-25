@@ -1,0 +1,56 @@
+<!--Prokesch Bence-->
+<!--DÁTUM-->
+
+<!doctype html>
+<html lang="hu">
+
+<head>
+	<title>Juventus - Atletico Madrid</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body onload='betolt()'>
+	<div id="container">
+		<img src="image/logo.jpg">
+		<h1>Juventus - Atletico Madrid</h1>
+		<center>
+			<table>
+				<tr>
+					<td>Jegy típusa:</td>
+					<td>
+						<select id="jegyTipus" autofocus>
+							<option value="252000">Szekció I.</option>
+							<option value="218000">Szekció II.</option>
+							<option value="174000">Szekció III.</option>
+							<option value="152000">Szekció IV.</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Jegyek száma:</td>
+					<td>
+						<input type="number" id='jegyDb' min='1' max='4' value="1">
+					</td>
+				</tr>
+				<tbody id='eredmeny'>
+					<tr>
+						<td>1 db jegy ára:</td>
+						<td><span id='jegy1Db'></span></td>
+					</tr>
+					<tr>
+						<td><span id='jegyXDb'></span> db jegy ára:</td>
+						<td>
+							<span id='osszesFt'></span><br>
+							<span id='osszesUSD'></span><br>
+							<span id='osszesEUR'></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<button id='szamol' onclick="szamol()">Számolás</button>
+			<button id='torol' onclick="torol()">Töröl</button>
+		</center>
+	</div>
+	<script src="main.js"></script>
+</body></html>

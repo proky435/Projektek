@@ -1,0 +1,16 @@
+#szorzotabla {
+  border-collapse: collapse;
+}
+
+#szorzotabla td, #szorzotabla th {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.selected {
+  background-color: lightblue;
+}
+
+.intersection-row, .intersection-column {
+  background-color: lightcoral; /* Vagy bármilyen más szín */
+}

@@ -1,0 +1,17 @@
+1. feladat:
+CREATE DATABASE varosok DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci
+3. feladat:
+SELECT varos.vnev FROM varos WHERE varos.vnev LIKE "%vásár%"
+4. feladat:
+SELECT varos.vnev, varos.nepesseg, varos.terulet FROM varos WHERE varos.terulet >400 ORDER BY varos.nepesseg DESC
+5. feladat:
+SELECT varos.vnev, varos.nepesseg, varos.terulet FROM varos INNER JOIN megye ON megye.id =varos.megyeid 
+WHERE megye.mnev LIKE "%fejér%" AND varos.nepesseg>15000
+6. feladat:
+SELECT varostipus.vtip AS "Város típusa", COUNT(varos.id) AS "Városok száma",SUM(varos.nepesseg) AS "Népesség" 
+FROM varos INNER JOIN varostipus ON varostipus.id=varos.vtipid 
+WHERE varostipus.vtip <> "főváros" GROUP BY varostipus.vtip
+7. feladat:
+SELECT megye.mnev,COUNT(varos.vnev) AS db
+FROM varos INNER JOIN varostipus ON varostipus.id=varos.megyeid
+WHERE varos.jaras<>varos.kisterseg GROUP BY megye.mnev HAVING db>8 ORDER BY db DESC
